@@ -36,21 +36,31 @@ c=0
 u=0
 r=2
 while(r>0):
+ if r==1:
+     c=0
+     u=0
  for i in range(0,4):
-    ch=input("enter your choice ")
+  
+  ch=str(input("enter your choice "))
+  try:   
     ch=ch.lower()
     c,u=winner(ch,c,u)
+  except Exception as e: 
+
+       print(f"'enter the correct option '")
+
  if c>u:
-    print(f"You got {u} and I got {c} I won :)")
+     print(f"You got {u} and I got {c} I won :)")
  elif c<u:
-    print(f" You got {u} anf I got {c} You won dear :)")
+     print(f" You got {u} anf I got {c} You won dear :)")
  elif c==u:
-    print(f" We both got {u} It's a tie ....We have got same brain cells!!!")
+     print(f" We both got {u} It's a tie ....We have got same brain cells!!!")
  r=int(input("Are you willing to play again...\n if yes then enter 1 if not enter 0 "))
  if r==1:
      print("Let's kill it dear... Let's play again")
  elif r==0:
-     print("Had a nice game with you","You are always welcome to play with me :)",sep="\n")     
+     print("Had a nice game with you","You are always welcome to play with me :)",sep="\n")
+
                 
 
 
