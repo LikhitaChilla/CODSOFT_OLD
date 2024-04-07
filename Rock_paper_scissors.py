@@ -46,7 +46,7 @@ while(r>0):
     ch=ch.lower()
     c,u=winner(ch,c,u)
   except Exception as e: 
-
+       print("wait my choice doesn't matter you entered a wrong one")
        print(f"'enter the correct option '")
 
  if c>u:
@@ -55,11 +55,18 @@ while(r>0):
      print(f" You got {u} anf I got {c} You won dear :)")
  elif c==u:
      print(f" We both got {u} It's a tie ....We have got same brain cells!!!")
- r=int(input("Are you willing to play again...\n if yes then enter 1 if not enter 0 "))
- if r==1:
+ try:    
+     r=int(input("Are you willing to play again...\n if yes then enter 1 if not enter 0 "))
+ except ValueError as e:
+     print("It seems you gave a wrong reply so let me take it as an answer to terminate....")
+     r=0
+     break
+ finally:    
+   if r==1:
      print("Let's kill it dear... Let's play again")
- elif r==0:
+   elif r==0:
      print("Had a nice game with you","You are always welcome to play with me :)",sep="\n")
+     print(f"I got {c} and you got {u}")
 
                 
 
